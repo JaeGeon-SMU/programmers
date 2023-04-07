@@ -1,14 +1,12 @@
-a=[1, 1, 2, 2, 3, 3, 3]
-list=[]
-arr=set(a)
+import math
 
-for i in arr:
-    list.append(a.count(i))
-
-print(list.count(max(list)))
-
-if list.count(max(list))>=2:
-    answer= -1
-else:
-    answer= max(list)
-print(answer)
+n=976
+i=1
+while n>=math.pow(i,2):
+    print(i,(n==math.pow(i,2)))
+    if(n==math.pow(i,2)):
+        answer=1
+        break;
+    else:
+        answer=2
+    i+=1
