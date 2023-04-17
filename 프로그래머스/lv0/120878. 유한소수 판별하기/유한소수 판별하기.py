@@ -8,7 +8,6 @@ def solution(a, b):
         if i in a_list:
             a_list.remove(i)
             c_list.remove(i)
-            
     
     for j in c_list:
         if j!=2 and j!=5:
