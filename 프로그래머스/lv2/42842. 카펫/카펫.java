@@ -11,9 +11,11 @@ class Solution {
         for(int a : l){
             int n1 = a+2;
             int n2 = (yellow/a)+2;
+            System.out.println(n1+""+n2);
             if(n1*n2 == brown+yellow){
-                answer[0] = n1;
-                answer[1] = n2;
+                answer[0] = n2;
+                answer[1] = n1;
+                break;
             }
         }
         return answer;
