@@ -12,11 +12,6 @@ class Solution {
             int n1 = a+2;
             int n2 = (yellow/a)+2;
             if(n1*n2 == brown+yellow){
-                if(n2>n1){
-                    int temp = n1;
-                    n1 = n2;
-                    n2 = temp;
-                }
                 answer[0] = n1;
                 answer[1] = n2;
             }
