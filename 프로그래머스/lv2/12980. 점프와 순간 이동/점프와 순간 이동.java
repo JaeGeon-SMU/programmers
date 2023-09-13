@@ -1,13 +1,5 @@
 public class Solution {
     public int solution(int n) {
-        int ans = 0;
-
-        char[] arr = Integer.toBinaryString(n).toCharArray();
-        for(char c : arr){
-            if(c=='1')
-                ans++;
-        }
-
-        return ans;
+        int ans = 0;for(char c : Integer.toBinaryString(n).toCharArray())if(c=='1')ans++;return ans;
     }
 }
