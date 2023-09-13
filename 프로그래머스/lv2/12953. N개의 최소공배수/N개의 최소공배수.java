@@ -1,13 +1,11 @@
 import java.util.*;
 class Solution {
     public int solution(int[] arr) {
-        int i=0;
-        int[] arr2 = new int[arr.length];
-        arr2[0] = arr[0];
-        for(i = 1 ; i<arr.length; i++){
-            arr2[i] = lcm(arr2[i-1],arr[i]);
+        int answer = arr[0];
+        for(int i = 1 ; i<arr.length; i++){
+            answer = lcm(answer,arr[i]);
         }
-        return arr2[i-1];
+        return answer;
     }
     public int gcd(int a, int b){
         while(a>0) {
