@@ -3,11 +3,11 @@ class Solution {
     public int solution(int[] elements) {
         Set<Integer> s = new HashSet();
         
-        for(int size = 1 ; size<=elements.length; size++){
-            for(int j = 0 ; j < elements.length; j++){
+        for(int size =1 ; size <= elements.length; size++){
+            for(int i = 0 ; i < elements.length; i++){
                 int sum = 0;
-                for(int i = j ; i<j+size; i++){
-                    sum+=elements[i%elements.length];
+                for(int j = i ; j<i+size; j++){
+                    sum+=elements[j%elements.length];
                 }
                 s.add(sum);
             }
