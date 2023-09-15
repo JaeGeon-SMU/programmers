@@ -1,2 +1,1 @@
-# pythonPractice
-파이썬 연습 저장소
+programmers 문제 풀기
