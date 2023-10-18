@@ -22,7 +22,7 @@ class Solution {
             for(int i = 0 ; i<d.length; i++){
                 char p1 = d[i].charAt(0);
                 char p2 = d[i].charAt(2);
-                int btwNum = (s.indexOf(p1)-s.indexOf(p2) > 0 ? s.indexOf(p1)-s.indexOf(p2) : -(s.indexOf(p1)-s.indexOf(p2)))-1;
+                int btwNum = Math.abs(s.indexOf(p1)-s.indexOf(p2))-1;
                 char c = d[i].charAt(3);
                 int cndNum = d[i].charAt(4)-'0';
                 if(c == '='){
