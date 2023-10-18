@@ -6,11 +6,13 @@ class Solution {
         for(int n : scoville)
             pq.add(n);
         while(pq.peek()<K){
-            int n = pq.poll()+pq.poll()*2;
-            pq.add(n);
+            int newSc = pq.poll()+(pq.poll()*2);
+            pq.add(newSc);
             answer++;
-            if(pq.size() ==1 && pq.peek() <K)
-                return -1;
+            if(pq.size() == 1 && pq.peek()<K){
+                answer = -1;
+                break;
+            }
         }
         return answer;
     }
