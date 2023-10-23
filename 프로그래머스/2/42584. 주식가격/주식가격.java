@@ -6,18 +6,17 @@ class Solution {
         for(int i = 0; i<prices.length; i++){
             if(s.isEmpty()) s.push(i);
             else if(prices[s.peek()]<=prices[i]) s.push(i);
-            else if(prices[s.peek()]>prices[i]){
+            else{
                 while(!s.isEmpty() && prices[s.peek()]>prices[i]){
-                    answer[s.peek()] = i-s.peek();
-                    s.pop();
+                    int a = s.pop();
+                    answer[a]=i-a;
                 }
                 s.push(i);
             }
         }
-       
         while(!s.isEmpty()){
-            answer[s.peek()] = (prices.length-1)-s.peek();
-            s.pop();
+            int a = s.pop();
+            answer[a]=(prices.length-1)-a;
         }
         return answer;
     }
