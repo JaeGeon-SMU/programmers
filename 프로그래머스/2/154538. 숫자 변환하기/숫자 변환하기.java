@@ -1,15 +1,13 @@
 import java.util.*;
 class Solution {
-    int answer= 0;
+    int answer= -1;
     Queue<Integer[]> q = new LinkedList();
     public int solution(int x, int y, int n) {
         q.add(new Integer[]{y,0});
-        if(y==x)
-            return 0;
         bfs(x,n);
         return answer;
     }
-    void bfs(int x,int n){
+    void bfs(int x,int n){        
         while(!q.isEmpty()){
             Integer[] a = q.poll();
             if(a[0]==x){
@@ -23,7 +21,6 @@ class Solution {
             if(a[0]-n>=x)
                 q.add(new Integer[]{a[0]-n,a[1]+1});
         }
-        answer = answer ==0 ? -1:answer;
     }
     
     
