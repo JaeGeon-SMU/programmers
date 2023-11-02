@@ -1,6 +1,5 @@
 import java.util.*;
 class Solution {
-    int ans = 0;
     String s;
     boolean[] visit;
     Set<Integer> set = new HashSet();
@@ -14,7 +13,7 @@ class Solution {
                 visit[a] = false;
             }
         }
-        return ans;
+        return set.size();
     }
     boolean sosu(int n){
         if(n ==1)
@@ -26,12 +25,8 @@ class Solution {
         return true;
     }
     void dfs(String ss){
-        if(sosu(Integer.valueOf(ss))){
-            int cnt = set.size();
+        if(sosu(Integer.valueOf(ss)))
             set.add(Integer.valueOf(ss));
-            if(set.size()>cnt)
-                ans++;
-        }
         for(int i =0; i<s.length(); i++){
             if(!visit[i]){
                 visit[i]=true;
