@@ -1,0 +1,1 @@
+class Solution{public int[] solution(int[] sequence, int k){int sum=0;int st=0;int end=0;int j=0;int i=0;int len=1000001;for(i=0;i<sequence.length;i++){sum+=sequence[i];while(sum>k)sum-=sequence[j++];if(sum==k){if(len>i-j){end=i;st=j;len=i-j;}}}return new int[]{st,end};}}
