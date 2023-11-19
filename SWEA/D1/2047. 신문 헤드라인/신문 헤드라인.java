@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public static void main(String a[]){for(int test_case = 1; test_case <= 1; test_case++){System.out.print(new Scanner(System.in).next().toUpperCase());}}}
