@@ -11,7 +11,7 @@ class Solution {
             else{
                 if(n==5)
                     if(storey%10 >=5)
-                        storey++;
+                        storey++;      
                 answer+=n;                       
             }
         }
