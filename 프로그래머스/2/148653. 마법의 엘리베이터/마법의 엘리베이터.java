@@ -8,16 +8,13 @@ class Solution {
                 answer+=(10-n);
                 storey++;
             }
-            else if(n==5){
-                if(storey%10 >=5){
-                    answer+=(10-n);
-                    storey++;
-                }
-                else
-                    answer+=n;
+            else{
+                if(n==5)
+                    if(storey%10 >=5){
+                        storey++;
+                    }
+                answer+=n;                       
             }
-            else
-                answer+=n;
         }
         return answer;
     }
