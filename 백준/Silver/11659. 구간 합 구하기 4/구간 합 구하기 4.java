@@ -1,19 +1,27 @@
-import java.util.*;
-class Main{
+import java.util.Scanner;
+
+public class Main{
     public static void main(String[] args){
-       Scanner sc =new Scanner(System.in);
-       int n = sc.nextInt();
-        int m = sc.nextInt();
-        sc.nextLine();
-        int[] arr2 = new int[n+1];
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); // 수의 개수
+        int m = sc.nextInt(); // 합을 구해야 하는 횟수
         
-        arr2[0]=0;
-        for(int k =1 ; k<arr2.length; k++){
-            arr2[k]+=sc.nextInt()+arr2[k-1];
+        int[] arr = new int[n+1];
+        
+        for(int i = 1; i<arr.length; i++){
+            arr[i] = sc.nextInt();
         }
-        sc.nextLine();
-        for(int i=0 ; i<m ; i++){
-            System.out.println(-arr2[sc.nextInt()-1]+arr2[sc.nextInt()]);
+        
+        int[] sumArr = new int[n+1];
+        sumArr[0] = 0;
+        for(int i=1; i<sumArr.length; i++){
+            sumArr[i] = arr[i] + sumArr[i-1];
+        }
+        
+        for(int i=0; i<m; i++){
+            int start = sc.nextInt()-1;
+            int end = sc.nextInt();
+            System.out.println(sumArr[end]-sumArr[start]);
         }
     }
 }
