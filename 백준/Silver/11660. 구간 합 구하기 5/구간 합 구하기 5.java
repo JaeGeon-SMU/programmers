@@ -1,22 +1,33 @@
-import java.util.Scanner;
-class Main{
+import java.util.*;
+
+public class Main{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-
-        int[][] sum = new int[n+1][n+1];
-        for(int i = 1 ; i<sum.length; i++){
-            for(int j =1 ; j<sum.length ; j++){
-                sum[i][j] = sum[i-1][j] + sum[i][j-1]-sum[i-1][j-1]+sc.nextInt();
+        int size = sc.nextInt(); // 표의 크기
+        int cnt = sc.nextInt(); // 합을 구해야 하는 횟수
+        
+        int[][] table = new int[size+1][size+1];
+        
+        for(int y=1; y<size+1; y++){
+            for(int x=1; x<size+1; x++){
+                table[y][x] = table[y-1][x]+table[y][x-1]+sc.nextInt()-table[y-1][x-1];
             }
         }
-        for(int k = 0 ; k<m; k++){
-            int x1 = sc.nextInt();
+        
+       
+        
+        // cnt번 반복
+        for(int i = 0; i<cnt; i++){
             int y1 = sc.nextInt();
-            int x2 = sc.nextInt();
+            int x1 = sc.nextInt();
             int y2 = sc.nextInt();
-            System.out.println(sum[x2][y2]-sum[x1-1][y2]-sum[x2][y1-1]+sum[x1-1][y1-1]);
+            int x2 = sc.nextInt();
+            
+            System.out.println(
+                table[y2][x2]-
+                table[y2][x1-1]-
+                table[y1-1][x2]+
+                table[y1-1][x1-1]);
         }
     }
 }
