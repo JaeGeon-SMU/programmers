@@ -8,6 +8,4 @@ where (fi.fish_type,length) in
     from FISH_INFO
     group by FISH_TYPE
 )
-
-
-
+order by ID
